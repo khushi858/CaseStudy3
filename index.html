@@ -894,595 +894,609 @@
           impact:
             "Management can now review consolidated global liquidity in USD at any point without waiting for manual reconciliation. The finance team shifted focus from data preparation and currency conversion to strategic cash planning and treasury decision-making, transforming a monthly manual exercise into a real-time executive dashboard.",
         },
-        {
-          id: 2,
-          tag: "Analytics",
-          tagClass: "tag-analytics",
-          stripe: "stripe-analytics",
-          title: "Automated MIS Replacing 40 Excel Sheets",
-          summary:
-            "A Dubai trading firm's finance team spent 5 working days every month building reports manually. We automated the entire process and delivered it to leadership every Monday at 8 AM — untouched by human hands.",
-          client: "Trading Company",
-          industry: "Trading · Dubai, UAE",
-          metrics: [
-            { val: "40+", lbl: "Sheets Replaced" },
-            { val: "5 Days", lbl: "Saved Monthly" },
-            { val: "Monday 8AM", lbl: "Auto Delivery" },
-          ],
-          tools: ["Zoho Analytics", "Zoho Books", "SQL", "Scheduled Email Reports"],
-          problem:
-            "Finance team maintained 40+ Excel sheets monthly covering sales, collections, payables, and margin analysis. The process was error-prone and took 5 full working days after month-end — leaving leadership flying blind for the first week of every new month.",
-          challenges: [
-            "Multi-level product categorization with a 3-tier hierarchy",
-            "Custom gross margin formulas varying by product line and customer type",
-            "Party-wise outstanding aging with dynamic 0-30/31-60/61-90/90+ day buckets",
-            "Budget vs actuals variance with drill-down by cost center",
-            "Sales representative performance scorecards with quota tracking",
-            "Weekly automated email delivery with zero manual trigger required",
-          ],
-          steps: [
-            { title: "Workflow Audit", desc: "Mapped every one of the 40 Excel sheets to its source data in Zoho Books, identifying what could be replaced by SQL query tables vs custom formula fields." },
-            { title: "Star-Schema Data Model", desc: "Constructed a data model with sales, purchase, party, and product dimensions in Zoho Analytics — replacing the fragmented spreadsheet structure." },
-            { title: "SQL Logic Engineering", desc: "Coded all margin calculations, aging bucket classification, and budget variance logic in SQL — replacing over 800 Excel formulas with auditable, version-controlled queries." },
-            { title: "Executive Dashboard Design", desc: "Built an MIS dashboard with category drill-down, top and bottom customer analysis, outstanding heatmap, and salesperson leaderboard." },
-            { title: "Automation Setup", desc: "Configured automated PDF report delivery every Monday at 8 AM to all department heads — with no manual intervention required at any step." },
-          ],
-          results: [
-            { val: "Zero", lbl: "Manual Effort" },
-            { val: "99%", lbl: "Accuracy Rate" },
-            { val: "Auto", lbl: "Weekly Delivery" },
-            { val: "₹0", lbl: "Reporting Overhead" },
-          ],
-          impact:
-            "Finance team operates 5 days leaner every month. Leadership receives structured, accurate insights every Monday before they open their laptops. Report error rate dropped from approximately 12% (Excel era) to near-zero in the first quarter.",
-        },
-        {
-          id: 3,
-          tag: "Reporting",
-          tagClass: "tag-reporting",
-          stripe: "stripe-reporting",
-          title: "Project-Wise P&L for a GCC Contracting Firm",
-          summary:
-            "30+ simultaneous construction projects with zero real-time cost visibility. Budget overruns were discovered only at project completion. We fixed that with live phase-wise tracking and early-warning alerts.",
-          client: "Contracting Company",
-          industry: "Construction · GCC Region",
-          metrics: [
-            { val: "30+", lbl: "Projects Live" },
-            { val: "4%", lbl: "Margin Gained" },
-            { val: "Same Week", lbl: "Overrun Detection" },
-          ],
-          tools: ["Zoho Books", "Zoho Analytics", "SQL", "Budget Upload Templates"],
-          problem:
-            "The company was managing 30+ active construction projects across Saudi Arabia, UAE, and Qatar. Costs were logged in Zoho Books but never analyzed against project budgets. Overruns were discovered only at project completion — when corrective action was impossible.",
-          challenges: [
-            "Budget vs actual cost tracking at project phase level",
-            "Subcontractor payment milestone and advance recovery tracking",
-            "Retention money management and scheduled release tracking",
-            "Resource utilization vs billing efficiency by project",
-            "Multi-currency billing across USD, SAR, and AED",
-            "Early warning threshold logic: cost vs physical progress correlation",
-          ],
-          steps: [
-            { title: "Project Dimension Design", desc: "Created a project and phase tagging framework in Zoho Books and Analytics, linking every expense, bill, and invoice to a specific project phase." },
-            { title: "Budget Upload System", desc: "Built an Excel-based budget template for Project Managers to upload phase-wise estimates — feeding directly into the comparison layer in Analytics." },
-            { title: "Retention and Milestone Tracking", desc: "Engineered retention calculation logic and subcontractor milestone payment schedules in SQL for all active contracts." },
-            { title: "Early Warning Alerts", desc: "Configured automated alerts when any project phase exceeded 85% of budget before physical completion reached 80% — giving teams time to intervene." },
-            { title: "Executive Portfolio Dashboard", desc: "Delivered a project portfolio overview, phase-wise cost drill-down, and cost-to-complete projection across all 30+ projects." },
-          ],
-          results: [
-            { val: "Same Week", lbl: "Overrun Detection" },
-            { val: "4%", lbl: "Margin Gain" },
-            { val: "Phase-Wise", lbl: "Cost Visibility" },
-            { val: "30+", lbl: "Projects Monitored" },
-          ],
-          impact:
-            "Management now identifies and acts on cost overruns within the same week rather than discovering them post-completion. Gross margin improved 4% in the first quarter after implementation. Project Manager teams reported measurably higher cost discipline.",
-        },
-        {
-          id: 4,
-          tag: "Integration",
-          tagClass: "tag-integration",
-          stripe: "stripe-integration",
-          title: "Zoho CRM to Zoho Books Revenue Bridge",
-          summary:
-            "Sales closed deals. Finance raised invoices. Nobody knew why the numbers never matched. We built the bridge that unified pipeline, invoicing, collection, and commissions into one source of truth.",
-          client: "SaaS Company",
-          industry: "Software Services · Bengaluru, India",
-          metrics: [
-            { val: "3 Days→20min", lbl: "Month-End Recon" },
-            { val: "Auto", lbl: "Commission Reports" },
-            { val: "Zero", lbl: "CRM-Books Mismatch" },
-          ],
-          tools: ["Zoho CRM", "Zoho Books", "Zoho Analytics", "SQL Joins"],
-          problem:
-            "Sales tracked deals in CRM; finance managed invoices in Books. No unified view existed for pipeline-to-revenue conversion, deal-to-invoice matching, or salesperson commissions. Month-end reconciliation between CRM and Books took 3 full days and still produced errors that caused commission disputes.",
-          challenges: [
-            "Mapping 14 CRM pipeline stages to invoice lifecycle statuses",
-            "Partial invoicing against single multi-year contracts",
-            "New business vs renewal vs upsell revenue classification",
-            "Salesperson commission slab calculation with quota-based overrides",
-            "Real-time MRR, churn, and expansion revenue tracking",
-            "Automated alert for Closed-Won deals without an invoice within 48 hours",
-          ],
-          steps: [
-            { title: "Data Join Architecture", desc: "Used Zoho Analytics SQL to join CRM Deals, Contacts, and Accounts with Books Invoices, Payments, and Credit Notes on a common customer identifier." },
-            { title: "Revenue Bridge Table", desc: "Built a unified bridge table showing each deal's journey: CRM stage → invoice raised → invoice paid → collection lag in days." },
-            { title: "Commission Calculation Engine", desc: "Coded a slab-wise commission engine in SQL with deal-type overrides and quota-breach escalation multipliers." },
-            { title: "Weighted Revenue Forecast", desc: "Created a pipeline forecast view combining CRM probability scores with historical stage-wise conversion rates for a live revenue projection." },
-            { title: "Reconciliation Alert System", desc: "Configured daily automated alerts for any Closed-Won CRM deal without a corresponding invoice in Books after 48 hours." },
-          ],
-          results: [
-            { val: "3 Days→20min", lbl: "Recon Time" },
-            { val: "Auto", lbl: "Commission Calc" },
-            { val: "Live", lbl: "Revenue Forecast" },
-            { val: "Zero", lbl: "Disputes" },
-          ],
-          impact:
-            "CFO now has a single source of truth linking every CRM deal to its invoice and collection record. Month-end reconciliation that consumed 3 person-days now takes 20 minutes. Sales commissions are paid on time without disputes for the first time in 3 years.",
-        },
-        {
-          id: 5,
-          tag: "Finance",
-          tagClass: "tag-finance",
-          stripe: "stripe-finance",
-          title: "13-Week Rolling Cash Flow Forecast",
-          summary:
-            "A diversified group with 8 bank accounts and 5 business units had no forward cash visibility. Liquidity crises were reactive. We made them preventable — with a live 13-week rolling forecast.",
-          client: "Diversified Business Group",
-          industry: "Conglomerate · India",
-          metrics: [
-            { val: "13-Week", lbl: "Rolling Forecast" },
-            { val: "8", lbl: "Banks Unified" },
-            { val: "Zero", lbl: "Liquidity Crises" },
-          ],
-          tools: ["Zoho Books", "Zoho Analytics", "SQL", "Bank Feed Integration"],
-          problem:
-            "Treasury was manually building cash projections in Excel every fortnight, unable to incorporate live outstanding payables, receivables, and upcoming loan EMIs. Two near-miss liquidity events occurred in the preceding 6 months. The group had no unified view of cash across 8 bank accounts in 3 banks.",
-          challenges: [
-            "Consolidating real-time cash across 8 bank accounts in 3 different banks",
-            "Collection probability scoring based on customer payment history",
-            "Scheduled payment forecasting from recurring vendor and loan contracts",
-            "Intercompany fund flow netting across 5 business units",
-            "FD maturity, loan repayment, GST, and TDS payment calendars",
-            "Minimum cash threshold alerts with 3-week lead time by entity",
-          ],
-          steps: [
-            { title: "Cash Position Foundation", desc: "Integrated all 8 bank accounts via Zoho Books bank feeds into a unified daily cash balance summary, updated automatically each morning." },
-            { title: "Receivables Probability Model", desc: "Built a collection probability engine based on 24 months of customer payment history — assigning 90%/60%/30% weights to receivables by age bucket." },
-            { title: "Payment Calendar Mapping", desc: "Mapped all recurring vendor payments, loan EMIs, statutory dues (GST, TDS, PF), and payroll dates into a structured 13-week payment calendar in SQL." },
-            { title: "FD and Liability Integration", desc: "Added FD maturity dates, bank guarantee renewals, LC expiry dates, and working capital limit utilization into the forecast model." },
-            { title: "Alert Infrastructure", desc: "Deployed entity-wise minimum cash balance threshold alerts with automated email escalations when projected balances breached warning levels." },
-          ],
-          results: [
-            { val: "13-Week", lbl: "Live Forecast" },
-            { val: "Zero", lbl: "Liquidity Crises" },
-            { val: "Daily", lbl: "Cash Position" },
-            { val: "Early", lbl: "Deficit Warnings" },
-          ],
-          impact:
-            "The group eliminated two near-miss liquidity situations in the first quarter. Banking relationships improved as the treasury team now proactively communicates upcoming large payments. The Group CFO called it 'the most impactful single implementation in five years.'",
-        },
-        {
-          id: 6,
-          tag: "Analytics",
-          tagClass: "tag-analytics",
-          stripe: "stripe-analytics",
-          title: "25-Outlet Retail Chain Inventory Intelligence",
-          summary:
-            "Overstocked slow movers in some stores, stockouts of bestsellers in others — with no visibility into which SKUs actually made money. We built an analytics layer that transformed how they buy and sell.",
-          client: "Retail Chain",
-          industry: "Retail · West India",
-          metrics: [
-            { val: "25", lbl: "Outlets Tracked" },
-            { val: "30%", lbl: "Stockout Reduction" },
-            { val: "18%", lbl: "Carrying Cost Saved" },
-          ],
-          tools: ["Zoho Inventory", "Zoho Analytics", "SQL", "POS Integration"],
-          problem:
-            "A 25-outlet retail chain had no real-time visibility into fast vs slow-moving stock by location. Buying was driven by intuition and supplier pressure. Overstock in some outlets and stockouts in others were hurting both gross margins and NPS scores.",
-          challenges: [
-            "SKU-level tracking across 25 outlets with different product assortments",
-            "Dead stock identification with age-based value erosion modeling",
-            "Category-wise gross margin analysis after markdowns, returns, and shrinkage",
-            "Demand-based reorder point calculation per location per SKU",
-            "Festival and seasonal demand pattern modeling for advance purchasing",
-            "Inter-outlet transfer recommendation logic to balance stock positions",
-          ],
-          steps: [
-            { title: "Data Integration", desc: "Connected Zoho Inventory and POS data into Analytics with outlet-level tagging across all 25 locations and daily automated sync." },
-            { title: "ABC-XYZ Classification", desc: "Built a combined ABC analysis (revenue contribution) with XYZ analysis (demand variability) to classify all SKUs into 9 buying strategy buckets." },
-            { title: "Stockout and Overstock Model", desc: "Calculated days-of-stock-remaining per SKU per outlet and flagged items below reorder point or above 90-day stock cover for action." },
-            { title: "Margin Analytics Layer", desc: "Computed outlet-wise and category-wise gross margin after all deductions — revealing which outlets and categories were genuinely profitable vs subsidized." },
-            { title: "Automated Reorder Alerts", desc: "Deployed daily reorder alerts to the buying team with outlet-specific reorder quantities and inter-outlet transfer suggestions to balance stock positions." },
-          ],
-          results: [
-            { val: "30%", lbl: "Stockouts Down" },
-            { val: "18%", lbl: "Carrying Cost" },
-            { val: "9-Bucket", lbl: "SKU Strategy" },
-            { val: "Daily", lbl: "Buying Signals" },
-          ],
-          impact:
-            "Inventory carrying cost reduced by 18% in 6 months. Stockout incidents dropped 30% across all outlets. The buying team shifted from supplier-led purchasing to data-driven reorder signals — measurably improving in-store availability and customer satisfaction scores.",
-        },
-        {
-          id: 7,
-          tag: "Reporting",
-          tagClass: "tag-reporting",
-          stripe: "stripe-reporting",
-          title: "NBFC RBI Regulatory Reporting Automation",
-          summary:
-            "Compliance team spent 7 full days every month manually building RBI returns across NPA, ALM, and CAR formats. We automated the entire pipeline — delivering same-day, submission-ready reports.",
-          client: "Non-Banking Financial Company",
-          industry: "Financial Services · Mumbai",
-          metrics: [
-            { val: "7→0 Days", lbl: "Manual Effort" },
-            { val: "Same Day", lbl: "Report Generation" },
-            { val: "Zero", lbl: "RBI Queries (12mo)" },
-          ],
-          tools: ["Zoho Analytics", "SQL", "Custom Data Lake", "RBI-Format Excel Export"],
-          problem:
-            "The compliance team aggregated loan data manually from 3 internal systems every month to build RBI-mandated returns covering NPA classification, ALM statements, and Capital Adequacy Ratios. The 7-day process was deadline-critical, consistently error-prone, and left no bandwidth for actual portfolio analysis.",
-          challenges: [
-            "NPA classification per RBI Master Directions: SMA-0, SMA-1, SMA-2, and NPA buckets",
-            "Provisioning computation at asset classification level with write-off netting",
-            "Sector-wise loan exposure mapping to RBI category codes",
-            "Capital Adequacy Ratio computation with Tier 1 and Tier 2 capital breakdown",
-            "ALM maturity bucket classification for both assets and liabilities",
-            "Generating 6 different export formats matching RBI-prescribed Excel templates",
-          ],
-          steps: [
-            { title: "Loan Master Data Model", desc: "Built a central loan master table in Analytics combining disbursement records, repayment schedules, and overdue tracking from all 3 source systems." },
-            { title: "NPA Classification Engine", desc: "Coded RBI-compliant NPA classification logic in SQL — automatically assigning SMA-0/1/2 or NPA status based on Days Past Due and restructuring flags." },
-            { title: "Provisioning Calculator", desc: "Built provisioning calculation logic per RBI norms across Standard, Sub-Standard, Doubtful (D1/D2/D3), and Loss asset categories." },
-            { title: "ALM and CAR Modules", desc: "Engineered maturity bucket classification for the ALM statement and Tier 1/Tier 2 capital computation for the CAR return — both fully SQL-driven." },
-            { title: "One-Click Export", desc: "Created one-click export automation generating all 6 RBI returns in the exact prescribed Excel formats — ready for portal upload without manual formatting." },
-          ],
-          results: [
-            { val: "Same Day", lbl: "All 6 Returns" },
-            { val: "Zero", lbl: "RBI Queries" },
-            { val: "7 Days", lbl: "Saved Monthly" },
-            { val: "Audit-Ready", lbl: "Output Quality" },
-          ],
-          impact:
-            "Zero regulatory queries received in 12 consecutive months after go-live. Compliance team redirected 7 person-days monthly toward risk analysis and portfolio quality review — activities that were previously impossible within the reporting cycle. Audit preparation time dropped from 4 days to under 4 hours.",
-        },
-        {
-          id: 8,
-          tag: "Finance",
-          tagClass: "tag-finance",
-          stripe: "stripe-finance",
-          title: "AR Collections Cockpit — DSO Reduced 35%",
-          summary:
-            "A B2B IT firm with 75-day DSO and reactive collections. We built a live AR cockpit with collector accountability, promise-to-pay tracking, and automated escalations — freeing ₹1.2Cr per month.",
-          client: "B2B IT Services Firm",
-          industry: "Technology Services · Pune, India",
-          metrics: [
-            { val: "75→49", lbl: "DSO (Days)" },
-            { val: "35%", lbl: "Faster Collections" },
-            { val: "₹1.2Cr", lbl: "Avg Cash Freed" },
-          ],
-          tools: ["Zoho Books", "Zoho Analytics", "SQL", "Zoho CRM"],
-          problem:
-            "Collections were reactive and unstructured. No collector was formally accountable for a specific customer portfolio. Overdue invoices sat unaddressed for weeks. DSO of 75 days against a 45-day industry benchmark was creating chronic working capital strain that constrained business growth.",
-          challenges: [
-            "Dynamic aging buckets refreshed daily: 0-30, 31-60, 61-90, 91-180, and 180+ days",
-            "Collector assignment with individual performance dashboards and portfolio aging views",
-            "Promise-to-pay date capture and automated follow-up workflow",
-            "Dispute flagging with escalation routing to the relevant Relationship Manager",
-            "Customer credit limit monitoring with breach alerts before new orders",
-            "Automated dunning email sequences at 30, 60, and 90 day overdue milestones",
-          ],
-          steps: [
-            { title: "AR Cockpit Foundation", desc: "Built a live aging dashboard pulling real-time invoice and payment data from Zoho Books — refreshed daily with dynamic bucket recalculation in SQL." },
-            { title: "Collector Assignment Framework", desc: "Created a collector master with customer-to-collector mapping, enabling individual performance dashboards showing each collector's portfolio aging and recovery rate." },
-            { title: "PTP and Dispute Workflow", desc: "Added structured promise-to-pay date fields and dispute classification reasons — replacing the ad-hoc WhatsApp follow-up culture with a tracked, accountable process." },
-            { title: "Escalation Automation", desc: "Configured automated escalation emails to Relationship Managers and the Finance Head when invoices crossed 60 days without a valid PTP date logged." },
-            { title: "Credit Limit Monitoring", desc: "Built daily credit utilization reports with breach alerts triggered before new orders were processed for customers with overdue balances above threshold." },
-          ],
-          results: [
-            { val: "75→49", lbl: "DSO Reduced" },
-            { val: "35%", lbl: "Recovery Speed" },
-            { val: "₹1.2Cr", lbl: "Cash Freed" },
-            { val: "2x", lbl: "Team Efficiency" },
-          ],
-          impact:
-            "DSO dropped from 75 to 49 days within 6 months. Average monthly free cash flow improved by ₹1.2 Crore without adding collection headcount. Disputes are resolved 60% faster due to structured tracking. The collections team describes the cockpit as 'the single biggest change in how we work.'",
-        },
-        {
-          id: 9,
-          tag: "Integration",
-          tagClass: "tag-integration",
-          stripe: "stripe-integration",
-          title: "E-Commerce Multi-Marketplace Profitability Analytics",
-          summary:
-            "Selling on Amazon, Flipkart, and Meesho with no idea which channel — or which SKU — was profitable after returns, platform fees, and ad spend. We built the visibility that led to a 3.2% margin improvement.",
-          client: "D2C Consumer Brand",
-          industry: "E-commerce · Bengaluru, India",
-          metrics: [
-            { val: "3→1", lbl: "Reports Unified" },
-            { val: "SKU-Level", lbl: "Net Margin Known" },
-            { val: "3.2%", lbl: "Margin Gain" },
-          ],
-          tools: ["Zoho Analytics", "Zoho Inventory", "SQL", "Marketplace Settlement APIs"],
-          problem:
-            "Finance downloaded settlement reports from 3 marketplaces monthly and reconciled manually in Excel — a 4-day process every month. True SKU-level profitability after commissions, returns, and advertising costs was unknown. Two high-volume SKUs were suspected loss-makers but the data to confirm or refute this did not exist.",
-          challenges: [
-            "Normalizing 3 different settlement report schemas into a single data model",
-            "Return deduction timing mismatches across different settlement cycles",
-            "Platform commission rate variation by product category and seller tier",
-            "Ad spend attribution per ASIN/SKU from Seller Central and Flipkart Ads Manager",
-            "COGS allocation from Zoho Inventory using the weighted average cost method",
-            "Multi-currency conversion for cross-border marketplace settlements",
-          ],
-          steps: [
-            { title: "API Integration Layer", desc: "Built automated API connectors for Amazon, Flipkart, and Meesho settlement feeds — delivering daily normalized data into a unified staging table in Zoho Analytics." },
-            { title: "Returns and Fees Model", desc: "Engineered SKU-level gross revenue calculation: Selling Price minus Platform Commission minus Return Deductions minus Shipping Charges, at transaction level." },
-            { title: "Ad Spend Attribution", desc: "Pulled Sponsored Product and Display campaign data from marketplace ad APIs and attributed spend to individual SKUs using campaign-to-product-ID mapping." },
-            { title: "COGS Integration", desc: "Linked Zoho Inventory weighted average cost to each settlement line item, enabling true net margin computation at the individual transaction level." },
-            { title: "Channel P&L Dashboard", desc: "Delivered a unified channel profitability dashboard with SKU drill-down, category heatmap, return rate trends, and monthly channel comparison view." },
-          ],
-          results: [
-            { val: "4 Days→Auto", lbl: "Reconciliation" },
-            { val: "SKU", lbl: "Net Margin Live" },
-            { val: "3.2%", lbl: "Blended Margin Up" },
-            { val: "2 SKUs", lbl: "Discontinued" },
-          ],
-          impact:
-            "Brand confirmed the 2 suspected loss-making SKUs were indeed destroying value after full cost allocation. Discontinued listings immediately, freeing inventory capital and improving blended margin by 3.2%. Monthly marketplace reconciliation became fully automated and audit-ready.",
-        },
-        {
-          id: 10,
-          tag: "Analytics",
-          tagClass: "tag-analytics",
-          stripe: "stripe-analytics",
-          title: "Hospital Revenue Cycle & TPA Claims Analytics",
-          summary:
-            "A 3-hospital chain was losing 20% of revenue to undetected billing gaps and slow insurance claim realizations. Our revenue cycle dashboard surfaced every rupee of leakage — systematically.",
-          client: "Multi-Specialty Hospital Chain",
-          industry: "Healthcare · South India",
-          metrics: [
-            { val: "20%", lbl: "Revenue Recovered" },
-            { val: "90→52", lbl: "TPA Claim Days" },
-            { val: "3", lbl: "Hospitals Unified" },
-          ],
-          tools: ["Zoho Analytics", "SQL", "Hospital HIS API", "Custom ETL Connectors"],
-          problem:
-            "Hospital management lacked visibility into department-wise revenue, TPA claim aging, rejection rates, and the gap between services rendered and amounts billed. Revenue leakages from unbilled services and delayed insurance realizations were going undetected for months.",
-          challenges: [
-            "OPD vs IPD revenue separation with specialty and doctor tagging",
-            "Billing efficiency ratio: services ordered vs services billed",
-            "TPA claim lifecycle: submission, pending, approved, rejected, and appealed",
-            "Package billing vs itemized billing reconciliation for surgical procedures",
-            "Unbilled service detection by comparing clinical logs against billing entries",
-            "Pharmacy dispensing vs billing reconciliation to catch dispensing-without-billing instances",
-          ],
-          steps: [
-            { title: "HIS Data Integration", desc: "Integrated hospital information system data via custom API connectors into Zoho Analytics, establishing daily sync of patient visits, services, and billing records." },
-            { title: "Unbilled Services Engine", desc: "Built a daily comparison between clinical service logs and billing entries — automatically flagging all services rendered but not billed within a 24-hour window." },
-            { title: "TPA Claims Lifecycle Tracker", desc: "Created a full insurance claim dashboard tracking submission date, pending duration, approval/rejection status, and appeal outcomes — segmented by TPA and specialty." },
-            { title: "Department Revenue Dashboard", desc: "Built doctor-wise and department-wise revenue dashboards with billing efficiency ratios, collection lag, and month-over-month trend analysis." },
-            { title: "Pharmacy Leakage Alert", desc: "Engineered a daily dispensing-vs-billing reconciliation for the pharmacy, generating actionable flags for items dispensed without corresponding billing entries." },
-          ],
-          results: [
-            { val: "20%", lbl: "Leakage Recovered" },
-            { val: "38 Days", lbl: "Faster TPA Realization" },
-            { val: "Daily", lbl: "Unbilled Alerts" },
-            { val: "Dept-Wise", lbl: "Revenue Visibility" },
-          ],
-          impact:
-            "Recovered 20% revenue leakage in the first 3 months of operation. TPA claim realization time dropped from 90 to 52 days through systematic follow-up driven by the aging dashboard. All 3 hospitals now have a daily view of revenue generation vs collection by department and doctor.",
-        },
-        {
-          id: 11,
-          tag: "Finance",
-          tagClass: "tag-finance",
-          stripe: "stripe-finance",
-          title: "GST Reconciliation — 3,000+ Invoices Automated",
-          summary:
-            "Manual GSTR-2A/2B matching in Excel for 3,000+ invoices per month was delaying ITC claims and consuming 4 person-days. We automated the match logic end-to-end with tolerance rules and vendor compliance scoring.",
-          client: "Manufacturing Company",
-          industry: "Manufacturing · Surat, Gujarat",
-          metrics: [
-            { val: "3,000+", lbl: "Invoices/Month" },
-            { val: "98%", lbl: "Auto-Match Rate" },
-            { val: "4 Days", lbl: "Saved Monthly" },
-          ],
-          tools: ["Zoho Books", "Zoho Analytics", "SQL", "GST Portal API"],
-          problem:
-            "The accounts team spent 4 days every month manually matching 3,000+ purchase invoices against GSTR-2A/2B downloads in Excel. Mismatches due to vendor GSTIN errors, invoice number formatting differences, and filing timing lags were common. ITC worth significant amounts was being missed or delayed every month.",
-          challenges: [
-            "Exact vs fuzzy invoice number matching across varied vendor formatting conventions",
-            "Vendor GSTIN validation and non-filer identification with automated alerts",
-            "Cross-period reconciliation for invoices filed late by vendors",
-            "B2B vs RCM vs B2G invoice category handling with separate treatment rules",
-            "Debit and credit note adjustment matching across periods",
-            "Vendor compliance scoring and procurement team integration for vendor evaluation",
-          ],
-          steps: [
-            { title: "GST Portal Automation", desc: "Automated GSTR-2A/2B data ingestion via GST Portal API into a monthly staging table in Zoho Analytics, eliminating manual downloads entirely." },
-            { title: "3-Tier Match Engine", desc: "Built a SQL-based matching engine with 3 tiers: exact invoice number match → amount tolerance match (±1%) → fuzzy GSTIN and date match — achieving 98% auto-resolution." },
-            { title: "Mismatch Root Cause Classification", desc: "Classified all unmatched invoices by root cause: vendor not filed, GSTIN mismatch, amount variance, period lag — each with a system-recommended corrective action." },
-            { title: "Vendor Compliance Scoring", desc: "Created a monthly vendor compliance score (0-100) based on GSTR-1 filing history and match rate, made available to the procurement team for vendor performance reviews." },
-            { title: "ITC Eligibility Dashboard", desc: "Built an ITC tracker showing matched (claim now), provisional (claim conditionally), and ineligible credit by month and vendor — ensuring no ITC was missed or over-claimed." },
-          ],
-          results: [
-            { val: "98%", lbl: "Match Rate" },
-            { val: "Zero", lbl: "Missed ITC" },
-            { val: "4 Days", lbl: "Saved Monthly" },
-            { val: "94%", lbl: "Vendor Compliance" },
-          ],
-          impact:
-            "ITC claims became accurate and timely from the first month. Vendor GSTR-1 compliance improved from 71% to 94% within 2 months of sharing compliance scores. 4 person-days saved monthly were redirected toward strategic indirect tax planning.",
-        },
-        {
-          id: 12,
-          tag: "Reporting",
-          tagClass: "tag-reporting",
-          stripe: "stripe-reporting",
-          title: "Group Consolidated Financial Statements — 7 Entities",
-          summary:
-            "Monthly consolidation across 7 subsidiaries took 12 days and still had auditor-flagged errors every year. We built a one-click consolidation engine with automatic intercompany elimination — delivering results by Day 1.",
-          client: "Indian Conglomerate",
-          industry: "Diversified Group · India",
-          metrics: [
-            { val: "12→1", lbl: "Days to Consolidate" },
-            { val: "7", lbl: "Entities Merged" },
-            { val: "Zero", lbl: "Audit Errors (3yrs)" },
-          ],
-          tools: ["Zoho Books", "Zoho Analytics", "SQL", "Power Pivot Export"],
-          problem:
-            "The Group CFO needed monthly consolidated P&L, Balance Sheet, and Cash Flow across 7 subsidiaries — each with a different chart of accounts and accounting team. Manual consolidation involved 12 days of intercompany matching, elimination journaling, and format harmonization. Auditors flagged material errors in the consolidated statements in each of the 3 preceding years.",
-          challenges: [
-            "Mapping 7 different charts of accounts to a standardized group COA",
-            "Identifying intercompany transactions across all 21 entity-pair combinations at transaction level",
-            "Eliminating intercompany receivables, payables, revenues, and cost simultaneously",
-            "Dividend upstream elimination and minority interest calculation for 3 partially-owned subsidiaries",
-            "Goodwill computation and amortization for the 2 acquisition-basis entities",
-            "Generating audit-ready elimination schedules in a format acceptable to Big 4 auditors",
-          ],
-          steps: [
-            { title: "Group COA Framework", desc: "Designed a master group Chart of Accounts and built an automated mapping layer translating each subsidiary's trial balance into the standardized group structure." },
-            { title: "IC Transaction Detection", desc: "Created SQL logic to auto-identify intercompany transactions using entity-pair tagging, party master cross-referencing, and amount plus date matching across all 7 entities." },
-            { title: "Automated Elimination Engine", desc: "Built elimination schedules for IC receivables/payables, IC revenue/cost, intercompany dividends, and investment-equity offsets — all generated without manual journal entries." },
-            { title: "Minority Interest and Goodwill", desc: "Engineered minority interest computation and goodwill amortization schedules for the 5 entities held on a non-100% basis or acquisition cost basis." },
-            { title: "One-Click Board Pack", desc: "Delivered a single-click consolidated P&L, Balance Sheet, and Cash Flow with full elimination schedules — formatted for board presentation and audit submission." },
-          ],
-          results: [
-            { val: "12→1", lbl: "Consolidation Days" },
-            { val: "Auto", lbl: "IC Elimination" },
-            { val: "Group COA", lbl: "Standardized" },
-            { val: "Audit-Ready", lbl: "Every Month" },
-          ],
-          impact:
-            "Board packs distributed by Day 2 instead of Day 15. Auditors found zero material errors in consolidated statements for 3 consecutive years — the first time in the group's history. Group CFO now spends consolidation week on strategic analysis rather than data assembly and manual elimination journals.",
-        },
-        {
-          id: 13,
-          tag: "Integration",
-          tagClass: "tag-integration",
-          stripe: "stripe-integration",
-          title: "SAP B1 to Zoho Ecosystem Migration — Zero Data Loss",
-          summary:
-            "5 years of SAP Business One data, ₹18 Lakh in annual maintenance costs, and a genuine fear of losing history. We executed a validated, phased migration in exactly 8 weeks — on schedule, on budget.",
-          client: "Manufacturing SME",
-          industry: "Manufacturing · Rajasthan, India",
-          metrics: [
-            { val: "₹18L", lbl: "Annual Savings" },
-            { val: "5 Years", lbl: "History Preserved" },
-            { val: "8 Weeks", lbl: "On-Schedule Go-Live" },
-          ],
-          tools: ["SAP Business One", "Zoho Books", "SQL", "Python ETL Scripts", "Zoho Analytics"],
-          problem:
-            "Client was paying ₹18 Lakh annually in SAP B1 licensing and support. They wanted to migrate to Zoho but feared losing 5 years of financial and operational data. Two previous migration attempts by other vendors had failed at the data validation stage, eroding internal confidence in any migration project.",
-          challenges: [
-            "Field-level data mapping across 180 relevant SAP B1 tables to Zoho Books equivalents",
-            "Open transaction migration: live invoices, bills, purchase orders, and delivery notes in progress",
-            "Historical reporting access for all transactions predating the go-live date",
-            "Balance sheet reconciliation at the cut-off date across every ledger account",
-            "Change management and training for 35 active system users across 3 departments",
-            "Business continuity during the 4-week parallel-run period",
-          ],
-          steps: [
-            { title: "Data Mapping Blueprint", desc: "Prepared a field-level mapping document across all 180 relevant SAP B1 tables, with each field mapped to its Zoho Books equivalent — reviewed and signed off before any data was touched." },
-            { title: "4-Phase Migration Plan", desc: "Executed in 4 signed-off phases: Chart of Accounts and Masters → Open Transactions → Historical Closed Data → Reporting and Analytics Layer." },
-            { title: "Python Transformation Scripts", desc: "Wrote Python scripts to extract, clean, transform, and format SAP data for Zoho Books import APIs — handling all data type, date format, and currency conversions." },
-            { title: "100% Balance Validation", desc: "Built SQL validation scripts comparing SAP closing balances against Zoho Books opening balances across every account — achieving a 100% match before go-live authorization." },
-            { title: "Historical Analytics Warehouse", desc: "Built a Zoho Analytics historical data warehouse for all pre-migration transactions, maintaining 5-year trend analysis continuity from day one of the new system." },
-          ],
-          results: [
-            { val: "100%", lbl: "Balance Match" },
-            { val: "₹18L", lbl: "Saved Annually" },
-            { val: "5 Years", lbl: "History Live" },
-            { val: "Zero", lbl: "Post Go-Live Errors" },
-          ],
-          impact:
-            "Client saved ₹18 Lakh in the first year. All 5 years of history is accessible in Zoho Analytics for audits and trend analysis. Go-live achieved on schedule with zero post-migration data discrepancies reported in 6 months of operation — reversing 2 years of failed vendor attempts.",
-        },
-        {
-          id: 14,
-          tag: "Analytics",
-          tagClass: "tag-analytics",
-          stripe: "stripe-analytics",
-          title: "Distributor Network Analytics for an FMCG Brand",
-          summary:
-            "80+ distributors, zero visibility into secondary sales, outlet coverage, or which distributors were actually growing. We built an analytics layer that changed how the entire sales function operates.",
-          client: "Regional FMCG Brand",
-          industry: "Consumer Goods · Maharashtra, India",
-          metrics: [
-            { val: "80+", lbl: "Distributors Tracked" },
-            { val: "22%", lbl: "Collection Efficiency" },
-            { val: "Real-Time", lbl: "Secondary Sales" },
-          ],
-          tools: ["Zoho Analytics", "Zoho Books", "SQL", "DMS API Integration"],
-          problem:
-            "Brand management had visibility into primary sales (factory to distributor) but zero visibility into secondary sales (distributor to retailer). Distributor stock positions, outlet coverage, and collection status were tracked through monthly phone calls. Decisions affecting crores of rupees in inventory and credit were made on data that was 30 days old.",
-          challenges: [
-            "Integrating DMS secondary sales data with Zoho Books primary sales at SKU level",
-            "Distributor-wise current inventory position and days-of-stock calculation",
-            "Outlet coverage percentage vs territory target by sales beat",
-            "Sales representative beat plan adherence and lines-per-call tracking",
-            "Trade scheme and distributor discount accrual reconciliation",
-            "Payment collection efficiency and distributor credit risk scoring",
-          ],
-          steps: [
-            { title: "DMS Data Pipeline", desc: "Built an automated daily data pipeline from the brand's Distributor Management System pulling secondary sales, current stock, and outlet visit data into Zoho Analytics." },
-            { title: "Primary-to-Secondary Bridge", desc: "Created a bridge table comparing primary sales (factory billing) with secondary sales (DMS offtake) to identify stock build-up and pipeline fill ratios by territory and SKU." },
-            { title: "Territory Performance Layer", desc: "Built territory scorecards covering outlet coverage percentage, numeric distribution, lines per call, and beat plan adherence — benchmarked against territory targets." },
-            { title: "Distributor Health Index", desc: "Engineered a composite Distributor Health Index (DHI) combining collection efficiency, stock days, secondary growth rate, and outlet coverage into a single 0-100 score per distributor." },
-            { title: "Field Force Mobile Dashboard", desc: "Delivered a mobile-friendly dashboard for Territory Managers showing their day's beat plan, distributor health scores, and pending collection status — accessible before each field visit." },
-          ],
-          results: [
-            { val: "22%", lbl: "Collection Efficiency" },
-            { val: "Real-Time", lbl: "Secondary Sales" },
-            { val: "DHI Score", lbl: "Per Distributor" },
-            { val: "Data-Driven", lbl: "Field Visits" },
-          ],
-          impact:
-            "Brand management shifted from monthly anecdotal distributor reviews to weekly data-driven conversations. Collection efficiency improved 22% in the first two quarters. Territory Managers enter every field visit with complete distributor context — replacing the guesswork that previously defined field-force planning.",
-        },
-        {
-          id: 15,
-          tag: "Reporting",
-          tagClass: "tag-reporting",
-          stripe: "stripe-reporting",
-          title: "Portfolio Analytics for a Private Equity Fund",
-          summary:
-            "6 portfolio companies across retail, manufacturing, and services — each on different accounting software. Quarterly board packs took 3 weeks and missed deadlines. We unified everything and cut it to 2 days.",
-          client: "Private Equity Fund",
-          industry: "Investment Management · Mumbai, India",
-          metrics: [
-            { val: "3 Weeks→2 Days", lbl: "Board Pack Time" },
-            { val: "6", lbl: "Companies Unified" },
-            { val: "Series B", lbl: "Fundraising Supported" },
-          ],
-          tools: ["Zoho Analytics", "SQL", "Tally XML", "QuickBooks API", "PowerPoint Export"],
-          problem:
-            "The fund's 6 portfolio companies used 3 different accounting systems (Tally, Zoho Books, QuickBooks). Quarterly board pack preparation required 3 weeks of manual aggregation, format harmonization, and KPI normalization. Investor reporting deadlines were routinely missed, creating credibility risk with LPs.",
-          challenges: [
-            "Simultaneous data ingestion from Tally, Zoho Books, and QuickBooks in different formats",
-            "Standardizing financial statements across 3 accounting standards and 6 reporting formats",
-            "KPI normalization across industries: retail metrics vs manufacturing metrics vs service metrics",
-            "EBITDA bridge calculation comparing quarter-on-quarter and year-on-year performance",
-            "Portfolio-level cash flow consolidation and debt covenant tracking across all 6 entities",
-            "Automated board pack data generation in slide-ready format for the quarterly investor presentation",
-          ],
-          steps: [
-            { title: "Multi-Source ETL Pipelines", desc: "Built ETL pipelines for all 3 accounting systems — Tally via XML export, Zoho Books via API, QuickBooks via CSV — feeding into a unified financial data lake in Zoho Analytics." },
-            { title: "Universal Financial Statement Framework", desc: "Designed a master financial statement template mapping each company's trial balance to a common P&L, Balance Sheet, and Cash Flow format regardless of source system." },
-            { title: "Industry-Adjusted KPI Modules", desc: "Built industry-specific KPI layers: Same-Store Sales Growth and inventory turn for retail; OEE and material cost ratio for manufacturing; utilization and realization rate for services." },
-            { title: "EBITDA Bridge and Waterfall", desc: "Engineered automated EBITDA bridge charts isolating volume, price, mix, and cost components — rendered as presentation-ready data outputs for each portfolio company." },
-            { title: "Board Pack Automation", desc: "Built a quarterly data automation workflow generating slide-ready financial exhibits, KPI scorecards, and portfolio summary data — reducing pack preparation from 3 weeks to 2 days." },
-          ],
-          results: [
-            { val: "3 Wks→2 Days", lbl: "Board Pack Time" },
-            { val: "6", lbl: "Companies Unified" },
-            { val: "Zero", lbl: "Missed Deadlines" },
-            { val: "Series B", lbl: "Analytics Supported" },
-          ],
-          impact:
-            "Quarterly board packs are now distributed within 5 business days of quarter close — previously 4 weeks. Portfolio performance conversations shifted from 'let me check and get back to you' to 'here is what the data shows.' Two portfolio companies leveraged the analytics framework to support successful Series B fundraising rounds.",
-        },
-      ];
+         {
+    id: 2,
+    tag: "Analytics",
+    tagClass: "tag-analytics",
+    stripe: "stripe-analytics",
+    title: "Automated MIS Replacing 40 Excel Sheets",
+    summary:
+      "A Dubai trading firm's finance team was burning 5 working days every month manually stitching together reports. As a Zoho Authorized Partner, we replaced all 40 Excel sheets with a fully automated MIS — delivered to leadership every Monday at 8 AM, without a single manual step.",
+    client: "Trading Company",
+    industry: "Trading · Dubai, UAE",
+    metrics: [
+      { val: "40+", lbl: "Sheets Replaced" },
+      { val: "5 Days", lbl: "Saved Monthly" },
+      { val: "Monday 8AM", lbl: "Auto Delivery" },
+    ],
+    tools: ["Zoho Analytics", "Zoho Books", "SQL", "Scheduled Email Reports"],
+    problem:
+      "The finance team maintained 40+ Excel sheets covering sales, collections, payables, and margin analysis — all built manually every month-end. The process took 5 full working days, was riddled with formula errors, and left leadership without reliable data for the entire first week of every new month. Sound familiar? This is one of the most common pain points we solve for trading businesses on Zoho.",
+    challenges: [
+      "Multi-level product categorization with a 3-tier hierarchy inside Zoho Analytics",
+      "Custom gross margin formulas varying by product line and customer type",
+      "Party-wise outstanding aging with dynamic 0–30 / 31–60 / 61–90 / 90+ day buckets",
+      "Budget vs actuals variance with drill-down by cost center",
+      "Sales representative performance scorecards with quota tracking",
+      "Weekly automated email delivery via Zoho Analytics — zero manual trigger required",
+    ],
+    steps: [
+      { title: "Workflow Audit", desc: "We mapped every one of the 40 Excel sheets to its source data in Zoho Books, identifying what could be replaced by Zoho Analytics SQL query tables vs custom formula fields. This step alone uncovered 6 redundant reports the team didn't know they were duplicating." },
+      { title: "Star-Schema Data Model in Zoho Analytics", desc: "We built a clean data model with sales, purchase, party, and product dimensions natively inside Zoho Analytics — replacing the fragmented, error-prone spreadsheet structure the team had grown around." },
+      { title: "SQL Logic Engineering", desc: "All margin calculations, aging bucket classification, and budget variance logic were coded directly in Zoho Analytics SQL — replacing 800+ Excel formulas with clean, auditable, version-controlled queries." },
+      { title: "Executive Dashboard Design", desc: "We built an MIS dashboard inside Zoho Analytics with category drill-down, top and bottom customer analysis, outstanding heatmap, and a salesperson leaderboard — all linked live to Zoho Books." },
+      { title: "Automation via Zoho Analytics Scheduler", desc: "Using Zoho Analytics' built-in scheduling, we configured automated PDF report delivery every Monday at 8 AM to all department heads — no manual intervention, no missed Mondays." },
+    ],
+    results: [
+      { val: "Zero", lbl: "Manual Effort" },
+      { val: "99%", lbl: "Accuracy Rate" },
+      { val: "Auto", lbl: "Weekly Delivery" },
+      { val: "₹0", lbl: "Reporting Overhead" },
+    ],
+    impact:
+      "The finance team operates 5 days leaner every month. Leadership now receives structured, accurate insights every Monday before they open their laptops. Report error rates dropped from approximately 12% in the Excel era to near-zero within the first quarter. This is the kind of result that's only possible when Zoho Books and Zoho Analytics are implemented together by a team that genuinely knows the platform.",
+  },
+
+  {
+    id: 3,
+    tag: "Reporting",
+    tagClass: "tag-reporting",
+    stripe: "stripe-reporting",
+    title: "Project-Wise P&L for a GCC Contracting Firm",
+    summary:
+      "30+ simultaneous construction projects across the GCC — with zero real-time cost visibility. Budget overruns were only discovered after project completion, when nothing could be done. We used Zoho Books and Zoho Analytics to give them live phase-wise tracking and early-warning alerts that changed how they manage every project.",
+    client: "Contracting Company",
+    industry: "Construction · GCC Region",
+    metrics: [
+      { val: "30+", lbl: "Projects Live" },
+      { val: "4%", lbl: "Margin Gained" },
+      { val: "Same Week", lbl: "Overrun Detection" },
+    ],
+    tools: ["Zoho Books", "Zoho Analytics", "SQL", "Budget Upload Templates"],
+    problem:
+      "The company was running 30+ active construction projects across Saudi Arabia, UAE, and Qatar. Costs were being logged in Zoho Books — but no one was comparing them against project budgets in real time. Overruns only surfaced at project completion, long after any corrective action was possible. As their Zoho implementation partner, we knew this wasn't a people problem — it was a configuration and analytics gap.",
+    challenges: [
+      "Budget vs actual cost tracking at project phase level using Zoho Books project tagging",
+      "Subcontractor payment milestone and advance recovery tracking",
+      "Retention money management and scheduled release tracking",
+      "Resource utilization vs billing efficiency per project",
+      "Multi-currency billing across USD, SAR, and AED within Zoho Books",
+      "Early warning threshold logic: cost vs physical progress correlation",
+    ],
+    steps: [
+      { title: "Project Dimension Design in Zoho Books", desc: "We built a project and phase tagging framework directly inside Zoho Books, ensuring every expense, bill, and invoice was linked to a specific project phase from the point of entry — no retroactive fixes needed." },
+      { title: "Budget Upload System", desc: "We created an Excel-based budget template for Project Managers to submit phase-wise estimates, feeding automatically into the comparison layer in Zoho Analytics." },
+      { title: "Retention and Milestone Tracking", desc: "Retention calculation logic and subcontractor milestone payment schedules were engineered in Zoho Analytics SQL for all active contracts." },
+      { title: "Early Warning Alerts", desc: "We configured automated alerts — triggered when any project phase exceeded 85% of budget before physical completion reached 80% — giving teams a window to intervene before it was too late." },
+      { title: "Executive Portfolio Dashboard", desc: "Delivered a project portfolio overview inside Zoho Analytics with phase-wise cost drill-down and cost-to-complete projections across all 30+ live projects." },
+    ],
+    results: [
+      { val: "Same Week", lbl: "Overrun Detection" },
+      { val: "4%", lbl: "Margin Gain" },
+      { val: "Phase-Wise", lbl: "Cost Visibility" },
+      { val: "30+", lbl: "Projects Monitored" },
+    ],
+    impact:
+      "Management now identifies and acts on cost overruns within the same week instead of discovering them at completion. Gross margin improved by 4% in the first quarter after go-live. Project Manager teams reported measurably higher cost discipline — a direct result of seeing their numbers in real time rather than retrospectively.",
+  },
+
+  {
+    id: 4,
+    tag: "Integration",
+    tagClass: "tag-integration",
+    stripe: "stripe-integration",
+    title: "Zoho CRM to Zoho Books Revenue Bridge",
+    summary:
+      "Sales closed deals in Zoho CRM. Finance raised invoices in Zoho Books. Nobody could explain why the numbers never matched. We built the integration bridge that unified pipeline, invoicing, collections, and commissions into one source of truth — and month-end reconciliation went from 3 days to 20 minutes.",
+    client: "SaaS Company",
+    industry: "Software Services · Bengaluru, India",
+    metrics: [
+      { val: "3 Days→20min", lbl: "Month-End Recon" },
+      { val: "Auto", lbl: "Commission Reports" },
+      { val: "Zero", lbl: "CRM-Books Mismatch" },
+    ],
+    tools: ["Zoho CRM", "Zoho Books", "Zoho Analytics", "SQL Joins"],
+    problem:
+      "This is one of the most common challenges we see in growing SaaS businesses on Zoho: Sales lives in Zoho CRM and Finance lives in Zoho Books — but the two systems don't talk to each other in a business-meaningful way. No unified pipeline-to-revenue view. No deal-to-invoice matching. No reliable commission calculation. Month-end reconciliation consumed 3 full person-days and still produced disputes.",
+    challenges: [
+      "Mapping 14 Zoho CRM pipeline stages to invoice lifecycle statuses in Zoho Books",
+      "Partial invoicing against single multi-year contracts",
+      "New business vs renewal vs upsell revenue classification",
+      "Salesperson commission slab calculation with quota-based overrides",
+      "Real-time MRR, churn, and expansion revenue tracking via Zoho Analytics",
+      "Automated alert for Closed-Won deals in Zoho CRM without an invoice in Books within 48 hours",
+    ],
+    steps: [
+      { title: "Data Join Architecture in Zoho Analytics", desc: "We used Zoho Analytics' SQL join capability to connect Zoho CRM Deals, Contacts, and Accounts with Zoho Books Invoices, Payments, and Credit Notes on a shared customer identifier — creating a live, unified view that didn't exist before." },
+      { title: "Revenue Bridge Table", desc: "We built a unified bridge table showing each deal's full journey: CRM pipeline stage → invoice raised → invoice paid → collection lag in days. For the first time, leadership could see the complete revenue lifecycle in one place." },
+      { title: "Commission Calculation Engine", desc: "A slab-wise commission engine was coded in Zoho Analytics SQL with deal-type overrides and quota-breach escalation multipliers — replacing the monthly spreadsheet fights that were damaging sales team trust." },
+      { title: "Weighted Revenue Forecast", desc: "We built a live pipeline forecast combining Zoho CRM probability scores with historical stage-wise conversion rates — giving Finance a forward-looking revenue view rather than backward-looking reconciliations." },
+      { title: "Automated Reconciliation Alerts", desc: "We configured a daily alert for any Closed-Won deal in Zoho CRM that didn't have a corresponding invoice in Zoho Books after 48 hours — catching revenue leakage before it compounded." },
+    ],
+    results: [
+      { val: "3 Days→20min", lbl: "Recon Time" },
+      { val: "Auto", lbl: "Commission Calc" },
+      { val: "Live", lbl: "Revenue Forecast" },
+      { val: "Zero", lbl: "Disputes" },
+    ],
+    impact:
+      "The CFO now has a single source of truth linking every Zoho CRM deal to its Zoho Books invoice and payment record. Month-end reconciliation that consumed 3 person-days now takes 20 minutes. Sales commissions are paid accurately and on time — without disputes — for the first time in 3 years. This is what the Zoho ecosystem is capable of when it's properly connected.",
+  },
+
+  {
+    id: 5,
+    tag: "Finance",
+    tagClass: "tag-finance",
+    stripe: "stripe-finance",
+    title: "13-Week Rolling Cash Flow Forecast",
+    summary:
+      "A diversified group with 8 bank accounts across 5 business units had no real forward cash visibility. Liquidity crises were reactive and stressful. We built a live 13-week rolling cash forecast on Zoho — and turned crisis management into proactive treasury.",
+    client: "Diversified Business Group",
+    industry: "Conglomerate · India",
+    metrics: [
+      { val: "13-Week", lbl: "Rolling Forecast" },
+      { val: "8", lbl: "Banks Unified" },
+      { val: "Zero", lbl: "Liquidity Crises" },
+    ],
+    tools: ["Zoho Books", "Zoho Analytics", "SQL", "Bank Feed Integration"],
+    problem:
+      "Treasury was manually building cash projections in Excel every fortnight — unable to pull in live outstanding payables, receivables, and upcoming EMIs from Zoho Books in real time. Two near-miss liquidity events had already occurred in the preceding 6 months. As their Zoho partner, we knew the data existed inside their system. It just wasn't being surfaced in a way the treasury team could act on.",
+    challenges: [
+      "Consolidating real-time cash positions across 8 bank accounts in 3 banks via Zoho Books bank feeds",
+      "Collection probability scoring based on customer payment history from Zoho Books",
+      "Scheduled payment forecasting from recurring vendor and loan contracts",
+      "Intercompany fund flow netting across 5 business units",
+      "FD maturity, loan repayment, GST, and TDS payment calendars",
+      "Minimum cash threshold alerts with a 3-week lead time per entity",
+    ],
+    steps: [
+      { title: "Unified Cash Position via Zoho Books Feeds", desc: "We integrated all 8 bank accounts through Zoho Books bank feeds into a single daily cash balance summary — updated automatically each morning without any manual downloads or entries." },
+      { title: "Receivables Probability Model", desc: "We built a collection probability engine using 24 months of customer payment history from Zoho Books — assigning 90%, 60%, and 30% probability weights to receivables by aging bucket." },
+      { title: "Payment Calendar in Zoho Analytics", desc: "All recurring vendor payments, loan EMIs, statutory dues (GST, TDS, PF), and payroll dates were mapped into a structured 13-week payment calendar using Zoho Analytics SQL." },
+      { title: "FD and Liability Integration", desc: "FD maturity dates, bank guarantee renewals, LC expiry dates, and working capital utilization were added into the forecast model to complete the picture on both sides of the cash equation." },
+      { title: "Threshold Alerts via Zoho Analytics", desc: "Entity-wise minimum cash balance alerts were deployed using Zoho Analytics' automated email notifications — triggered whenever projected balances breached warning thresholds, 3 weeks in advance." },
+    ],
+    results: [
+      { val: "13-Week", lbl: "Live Forecast" },
+      { val: "Zero", lbl: "Liquidity Crises" },
+      { val: "Daily", lbl: "Cash Position" },
+      { val: "Early", lbl: "Deficit Warnings" },
+    ],
+    impact:
+      "The group eliminated two near-miss liquidity situations in the first quarter. Banking relationships improved as the treasury team now proactively communicates upcoming large payments rather than scrambling reactively. The Group CFO called it 'the most impactful single implementation in five years.' This is what happens when Zoho Books is set up and connected the right way.",
+  },
+
+  {
+    id: 6,
+    tag: "Analytics",
+    tagClass: "tag-analytics",
+    stripe: "stripe-analytics",
+    title: "25-Outlet Retail Chain Inventory Intelligence",
+    summary:
+      "Overstocked slow movers in some stores, stockouts of bestsellers in others — and no visibility into which SKUs were actually profitable. We built an inventory analytics layer on Zoho that transformed how the buying team operates across all 25 outlets.",
+    client: "Retail Chain",
+    industry: "Retail · West India",
+    metrics: [
+      { val: "25", lbl: "Outlets Tracked" },
+      { val: "30%", lbl: "Stockout Reduction" },
+      { val: "18%", lbl: "Carrying Cost Saved" },
+    ],
+    tools: ["Zoho Inventory", "Zoho Analytics", "SQL", "POS Integration"],
+    problem:
+      "A 25-outlet retail chain was running Zoho Inventory — but without a reporting layer, the data was invisible. Buying decisions were driven by gut feel and supplier relationships. Some outlets were sitting on dead stock while others ran out of their best sellers. Gross margins were being eroded by markdowns and returns that no one could see coming. This is a problem we solve regularly for retail businesses on Zoho.",
+    challenges: [
+      "SKU-level tracking across 25 outlets with different product assortments in Zoho Inventory",
+      "Dead stock identification with age-based value erosion modeling",
+      "Category-wise gross margin analysis after markdowns, returns, and shrinkage",
+      "Demand-based reorder point calculation per outlet per SKU",
+      "Festival and seasonal demand pattern modeling for advance purchasing",
+      "Inter-outlet transfer recommendation logic to balance stock positions across the chain",
+    ],
+    steps: [
+      { title: "Zoho Inventory + POS Integration", desc: "We connected Zoho Inventory and POS transaction data into Zoho Analytics with outlet-level tagging across all 25 locations and a daily automated sync — creating a live, unified inventory view." },
+      { title: "ABC-XYZ Classification in Zoho Analytics", desc: "We built a combined ABC analysis (revenue contribution) and XYZ analysis (demand variability) to classify all SKUs into 9 buying strategy buckets — giving the buying team a clear, data-driven framework." },
+      { title: "Stockout and Overstock Model", desc: "Days-of-stock-remaining was calculated per SKU per outlet, with automated flags for items below reorder point or above 90-day stock cover — surfaced daily in the dashboard." },
+      { title: "Margin Analytics Layer", desc: "We computed outlet-wise and category-wise gross margin after all deductions through Zoho Analytics, revealing which outlets and categories were genuinely profitable vs implicitly subsidised by others." },
+      { title: "Daily Reorder Alerts via Zoho Analytics", desc: "The buying team now receives daily reorder alerts with outlet-specific quantities and inter-outlet transfer suggestions to balance stock positions — completely replacing the old supplier-driven purchasing cycle." },
+    ],
+    results: [
+      { val: "30%", lbl: "Stockouts Down" },
+      { val: "18%", lbl: "Carrying Cost" },
+      { val: "9-Bucket", lbl: "SKU Strategy" },
+      { val: "Daily", lbl: "Buying Signals" },
+    ],
+    impact:
+      "Inventory carrying cost reduced by 18% within 6 months. Stockout incidents dropped 30% across all outlets. The buying team shifted from supplier-led purchasing to data-driven reorder signals from Zoho Analytics — improving in-store availability and customer satisfaction scores measurably.",
+  },
+
+  {
+    id: 7,
+    tag: "Reporting",
+    tagClass: "tag-reporting",
+    stripe: "stripe-reporting",
+    title: "NBFC RBI Regulatory Reporting Automation",
+    summary:
+      "A compliance team spending 7 full days every month manually assembling RBI returns across NPA, ALM, and CAR formats. We automated the entire reporting pipeline on Zoho Analytics — same-day, submission-ready, with zero manual formatting.",
+    client: "Non-Banking Financial Company",
+    industry: "Financial Services · Mumbai",
+    metrics: [
+      { val: "7→0 Days", lbl: "Manual Effort" },
+      { val: "Same Day", lbl: "Report Generation" },
+      { val: "Zero", lbl: "RBI Queries (12mo)" },
+    ],
+    tools: ["Zoho Analytics", "SQL", "Custom Data Lake", "RBI-Format Excel Export"],
+    problem:
+      "The compliance team was manually pulling loan data from 3 internal systems every month to build RBI-mandated returns covering NPA classification, ALM statements, and Capital Adequacy Ratios. The 7-day process was deadline-critical, consistently error-prone, and consumed all available capacity — leaving no room for actual portfolio risk analysis. Our job as their Zoho partner was to make the system do the work.",
+    challenges: [
+      "NPA classification per RBI Master Directions: SMA-0, SMA-1, SMA-2, and NPA buckets",
+      "Provisioning computation at asset classification level with write-off netting",
+      "Sector-wise loan exposure mapping to RBI category codes",
+      "Capital Adequacy Ratio computation with Tier 1 and Tier 2 capital breakdown",
+      "ALM maturity bucket classification for both assets and liabilities",
+      "Generating 6 different export formats matching RBI-prescribed Excel templates — directly from Zoho Analytics",
+    ],
+    steps: [
+      { title: "Loan Master Data Model in Zoho Analytics", desc: "We built a central loan master table inside Zoho Analytics combining disbursement records, repayment schedules, and overdue tracking from all 3 source systems into a single governed data layer." },
+      { title: "NPA Classification Engine", desc: "RBI-compliant NPA classification logic was coded entirely in Zoho Analytics SQL — automatically assigning SMA-0/1/2 or NPA status based on Days Past Due and restructuring flags, with no manual overrides." },
+      { title: "Provisioning Calculator", desc: "Provisioning calculation logic was built per RBI norms across Standard, Sub-Standard, Doubtful (D1/D2/D3), and Loss asset categories — fully automated and auditable." },
+      { title: "ALM and CAR Modules", desc: "Maturity bucket classification for the ALM statement and Tier 1/Tier 2 capital computation for the CAR return were both engineered in Zoho Analytics SQL — no spreadsheet involvement." },
+      { title: "One-Click RBI Export from Zoho Analytics", desc: "We built a one-click export workflow inside Zoho Analytics that generates all 6 RBI returns in the exact prescribed Excel formats — ready for portal upload without any manual formatting or reformatting." },
+    ],
+    results: [
+      { val: "Same Day", lbl: "All 6 Returns" },
+      { val: "Zero", lbl: "RBI Queries" },
+      { val: "7 Days", lbl: "Saved Monthly" },
+      { val: "Audit-Ready", lbl: "Output Quality" },
+    ],
+    impact:
+      "Zero regulatory queries received in 12 consecutive months after go-live. The compliance team redirected 7 person-days every month toward risk analysis and portfolio quality review — work that was previously impossible to do within the reporting cycle. Audit preparation time dropped from 4 days to under 4 hours.",
+  },
+
+  {
+    id: 8,
+    tag: "Finance",
+    tagClass: "tag-finance",
+    stripe: "stripe-finance",
+    title: "AR Collections Cockpit — DSO Reduced 35%",
+    summary:
+      "A B2B IT firm stuck at 75-day DSO with reactive, unstructured collections. We built a live AR cockpit on Zoho Books and Zoho Analytics — with collector accountability, promise-to-pay tracking, and automated escalations — that freed ₹1.2 Crore per month in working capital.",
+    client: "B2B IT Services Firm",
+    industry: "Technology Services · Pune, India",
+    metrics: [
+      { val: "75→49", lbl: "DSO (Days)" },
+      { val: "35%", lbl: "Faster Collections" },
+      { val: "₹1.2Cr", lbl: "Avg Cash Freed" },
+    ],
+    tools: ["Zoho Books", "Zoho Analytics", "SQL", "Zoho CRM"],
+    problem:
+      "Collections were reactive, undocumented, and unaccountable. No collector had a formally assigned customer portfolio. Overdue invoices sat unaddressed in Zoho Books for weeks because there was no system to surface them and no process to act on them. DSO of 75 days vs a 45-day industry benchmark was creating chronic working capital strain. Everything the business needed to fix this was already in Zoho — it just wasn't configured as a collections engine.",
+    challenges: [
+      "Dynamic aging buckets refreshed daily from Zoho Books: 0–30, 31–60, 61–90, 91–180, and 180+ days",
+      "Collector assignment with individual performance dashboards inside Zoho Analytics",
+      "Promise-to-pay date capture and automated follow-up workflow",
+      "Dispute flagging with escalation routing to the relevant Relationship Manager via Zoho CRM",
+      "Customer credit limit monitoring with breach alerts before new orders are processed",
+      "Automated dunning email sequences at 30, 60, and 90 day overdue milestones",
+    ],
+    steps: [
+      { title: "Live AR Cockpit in Zoho Analytics", desc: "We built a live aging dashboard pulling real-time invoice and payment data directly from Zoho Books, refreshed daily with dynamic bucket recalculation in Zoho Analytics SQL — giving the collections team a single, always-current view of what was owed." },
+      { title: "Collector Assignment Framework", desc: "A collector master was created linking each customer to an assigned collector, enabling individual performance dashboards in Zoho Analytics showing each team member's portfolio aging and recovery rate." },
+      { title: "Promise-to-Pay and Dispute Workflow", desc: "Structured promise-to-pay date fields and dispute classification reasons replaced the ad-hoc WhatsApp follow-up culture with a tracked, accountable process visible to the whole team." },
+      { title: "Escalation Automation via Zoho Analytics Alerts", desc: "Automated escalation emails to Relationship Managers and the Finance Head were configured through Zoho Analytics whenever invoices crossed 60 days without a valid PTP date logged." },
+      { title: "Credit Limit Integration with Zoho Books", desc: "Daily credit utilization reports were built with breach alerts triggered in advance of new order processing for customers with overdue balances above threshold." },
+    ],
+    results: [
+      { val: "75→49", lbl: "DSO Reduced" },
+      { val: "35%", lbl: "Recovery Speed" },
+      { val: "₹1.2Cr", lbl: "Cash Freed" },
+      { val: "2x", lbl: "Team Efficiency" },
+    ],
+    impact:
+      "DSO dropped from 75 to 49 days within 6 months. Average monthly free cash flow improved by ₹1.2 Crore without adding a single collections headcount. Disputes are now resolved 60% faster due to structured tracking. The collections team calls it 'the single biggest change in how we work' — and it was built entirely on tools they already had.",
+  },
+
+  {
+    id: 9,
+    tag: "Integration",
+    tagClass: "tag-integration",
+    stripe: "stripe-integration",
+    title: "E-Commerce Multi-Marketplace Profitability Analytics",
+    summary:
+      "Selling on Amazon, Flipkart, and Meesho — with no idea which channel or SKU was actually profitable after returns, platform fees, and ad spend. We integrated all three into Zoho Analytics and surfaced the truth that led to a 3.2% margin improvement.",
+    client: "D2C Consumer Brand",
+    industry: "E-commerce · Bengaluru, India",
+    metrics: [
+      { val: "3→1", lbl: "Reports Unified" },
+      { val: "SKU-Level", lbl: "Net Margin Known" },
+      { val: "3.2%", lbl: "Margin Gain" },
+    ],
+    tools: ["Zoho Analytics", "Zoho Inventory", "SQL", "Marketplace Settlement APIs"],
+    problem:
+      "Finance was manually downloading settlement reports from Amazon, Flipkart, and Meesho and reconciling them in Excel — a 4-day exercise every month. True SKU-level profitability after commissions, returns, and ad spend was completely unknown. Two high-volume SKUs were suspected loss-makers, but there was no data to confirm it. As their Zoho partner, we knew Zoho Analytics could bring this all together — the platform was built for exactly this kind of multi-source integration.",
+    challenges: [
+      "Normalizing 3 different marketplace settlement report schemas into a single Zoho Analytics data model",
+      "Return deduction timing mismatches across different marketplace settlement cycles",
+      "Platform commission rate variation by product category and seller tier",
+      "Ad spend attribution per ASIN/SKU from Amazon Seller Central and Flipkart Ads Manager",
+      "COGS allocation from Zoho Inventory using weighted average cost method",
+      "Multi-currency conversion for cross-border marketplace settlements",
+    ],
+    steps: [
+      { title: "Marketplace API Integration into Zoho Analytics", desc: "We built automated API connectors for Amazon, Flipkart, and Meesho settlement feeds, delivering daily normalized data into a unified staging table in Zoho Analytics — eliminating the monthly manual download cycle entirely." },
+      { title: "Returns and Platform Fees Model", desc: "SKU-level gross revenue was calculated at transaction level inside Zoho Analytics: Selling Price minus Platform Commission minus Return Deductions minus Shipping Charges — across all three channels in one view." },
+      { title: "Ad Spend Attribution via Marketplace APIs", desc: "Sponsored Product and Display campaign data was pulled from marketplace ad APIs and attributed to individual SKUs using campaign-to-product-ID mapping in Zoho Analytics." },
+      { title: "COGS Integration from Zoho Inventory", desc: "Zoho Inventory's weighted average cost was linked to each settlement line item, enabling true net margin computation at the individual transaction level — the critical missing piece." },
+      { title: "Unified Channel P&L in Zoho Analytics", desc: "We delivered a single channel profitability dashboard with SKU drill-down, category heatmap, return rate trends, and monthly channel comparison — replacing three separate Excel reports with one always-live view." },
+    ],
+    results: [
+      { val: "4 Days→Auto", lbl: "Reconciliation" },
+      { val: "SKU", lbl: "Net Margin Live" },
+      { val: "3.2%", lbl: "Blended Margin Up" },
+      { val: "2 SKUs", lbl: "Discontinued" },
+    ],
+    impact:
+      "The 2 suspected loss-making SKUs were confirmed to be destroying value after full cost allocation through Zoho Analytics. Both listings were discontinued immediately, freeing inventory capital and improving blended margin by 3.2%. Monthly marketplace reconciliation became fully automated, audit-ready, and took 20 minutes instead of 4 days.",
+  },
+
+  {
+    id: 10,
+    tag: "Analytics",
+    tagClass: "tag-analytics",
+    stripe: "stripe-analytics",
+    title: "Hospital Revenue Cycle & TPA Claims Analytics",
+    summary:
+      "A 3-hospital chain was losing an estimated 20% of revenue to undetected billing gaps and slow insurance claim realization. We built a revenue cycle dashboard on Zoho Analytics that surfaced every rupee of leakage — and made sure it never disappeared unnoticed again.",
+    client: "Multi-Specialty Hospital Chain",
+    industry: "Healthcare · South India",
+    metrics: [
+      { val: "20%", lbl: "Revenue Recovered" },
+      { val: "90→52", lbl: "TPA Claim Days" },
+      { val: "3", lbl: "Hospitals Unified" },
+    ],
+    tools: ["Zoho Analytics", "SQL", "Hospital HIS API", "Custom ETL Connectors"],
+    problem:
+      "Hospital management had no consolidated view of department-wise revenue, TPA claim aging, rejection rates, or the gap between services rendered and amounts billed. Revenue leakage from unbilled services and delayed insurance realizations were going undetected for months. The problem wasn't effort — it was the absence of a connected analytics layer. Zoho Analytics was the right platform to build it on.",
+    challenges: [
+      "OPD vs IPD revenue separation with specialty and doctor tagging inside Zoho Analytics",
+      "Billing efficiency ratio: services ordered vs services actually billed",
+      "TPA claim lifecycle tracking: submission → pending → approved → rejected → appealed",
+      "Package billing vs itemized billing reconciliation for surgical procedures",
+      "Unbilled service detection by comparing clinical logs against billing entries daily",
+      "Pharmacy dispensing vs billing reconciliation to catch dispensing-without-billing instances",
+    ],
+    steps: [
+      { title: "HIS Data Integration into Zoho Analytics", desc: "Custom API connectors were built to integrate hospital information system data into Zoho Analytics, establishing daily automated sync of patient visits, services rendered, and billing records across all 3 hospitals." },
+      { title: "Unbilled Services Engine", desc: "A daily comparison between clinical service logs and billing entries was built inside Zoho Analytics, automatically flagging all services rendered but not billed within a 24-hour window — turning a monthly surprise into a daily catch." },
+      { title: "TPA Claims Lifecycle Dashboard", desc: "A full insurance claim lifecycle tracker was built in Zoho Analytics showing submission date, pending duration, approval/rejection status, and appeal outcomes — segmented by TPA and specialty for targeted follow-up." },
+      { title: "Department Revenue Dashboard", desc: "Doctor-wise and department-wise revenue dashboards were built in Zoho Analytics with billing efficiency ratios, collection lag, and month-over-month trend analysis — giving each department head their own performance view." },
+      { title: "Pharmacy Leakage Alerts via Zoho Analytics", desc: "A daily dispensing-vs-billing reconciliation was engineered for the pharmacy, generating actionable exception flags for items dispensed without corresponding billing entries." },
+    ],
+    results: [
+      { val: "20%", lbl: "Leakage Recovered" },
+      { val: "38 Days", lbl: "Faster TPA Realization" },
+      { val: "Daily", lbl: "Unbilled Alerts" },
+      { val: "Dept-Wise", lbl: "Revenue Visibility" },
+    ],
+    impact:
+      "20% of previously undetected revenue leakage was recovered within the first 3 months of operation. TPA claim realization time dropped from 90 to 52 days through systematic follow-up driven by the Zoho Analytics aging dashboard. All 3 hospitals now have a daily, unified view of revenue generation vs collection by department and doctor.",
+  },
+
+  {
+    id: 11,
+    tag: "Finance",
+    tagClass: "tag-finance",
+    stripe: "stripe-finance",
+    title: "GST Reconciliation — 3,000+ Invoices Automated",
+    summary:
+      "Manual GSTR-2A/2B matching in Excel for 3,000+ invoices per month was delaying ITC claims and consuming 4 person-days. We automated the entire match-and-classify process inside Zoho Analytics — with tolerance rules, fuzzy matching, and vendor compliance scoring — achieving a 98% auto-match rate.",
+    client: "Manufacturing Company",
+    industry: "Manufacturing · Surat, Gujarat",
+    metrics: [
+      { val: "3,000+", lbl: "Invoices/Month" },
+      { val: "98%", lbl: "Auto-Match Rate" },
+      { val: "4 Days", lbl: "Saved Monthly" },
+    ],
+    tools: ["Zoho Books", "Zoho Analytics", "SQL", "GST Portal API"],
+    problem:
+      "The accounts team was spending 4 days every month manually matching 3,000+ purchase invoices in Zoho Books against GSTR-2A/2B downloads in Excel. Mismatches caused by vendor GSTIN errors, invoice number formatting differences, and filing timing lags were common. Significant ITC was being missed or delayed every month. All the data was in Zoho Books — the problem was the absence of an automated reconciliation layer connecting it to the GST portal.",
+    challenges: [
+      "Exact vs fuzzy invoice number matching across varied vendor formatting conventions",
+      "Vendor GSTIN validation and non-filer identification with automated alerts from Zoho Books data",
+      "Cross-period reconciliation for invoices filed late by vendors",
+      "B2B vs RCM vs B2G invoice category handling with separate treatment rules",
+      "Debit and credit note adjustment matching across periods",
+      "Vendor compliance scoring to integrate with the procurement team's vendor evaluation process",
+    ],
+    steps: [
+      { title: "GST Portal API Integration into Zoho Analytics", desc: "GSTR-2A/2B data ingestion via the GST Portal API was automated directly into a monthly staging table in Zoho Analytics, eliminating manual downloads and the human error that came with them." },
+      { title: "3-Tier SQL Match Engine", desc: "A Zoho Analytics SQL matching engine was built across 3 tiers: exact invoice number match → amount tolerance match (±1%) → fuzzy GSTIN and date match — achieving a 98% auto-resolution rate before human review." },
+      { title: "Mismatch Root Cause Classification", desc: "All unmatched invoices were automatically classified by root cause in Zoho Analytics: vendor not filed, GSTIN mismatch, amount variance, period lag — each with a system-recommended corrective action." },
+      { title: "Vendor Compliance Scoring", desc: "A monthly vendor compliance score (0–100) was built in Zoho Analytics based on GSTR-1 filing history and invoice match rate, shared with the procurement team for vendor performance reviews." },
+      { title: "ITC Eligibility Dashboard in Zoho Analytics", desc: "A full ITC tracker was built showing matched (claim now), provisional (claim conditionally), and ineligible credit by month and vendor — ensuring zero missed ITC and zero over-claims." },
+    ],
+    results: [
+      { val: "98%", lbl: "Match Rate" },
+      { val: "Zero", lbl: "Missed ITC" },
+      { val: "4 Days", lbl: "Saved Monthly" },
+      { val: "94%", lbl: "Vendor Compliance" },
+    ],
+    impact:
+      "ITC claims became accurate and timely from the very first month. Vendor GSTR-1 compliance improved from 71% to 94% within 2 months of the compliance scores being shared. 4 person-days saved monthly were redirected toward strategic indirect tax planning — work that actually adds value.",
+  },
+
+  {
+    id: 12,
+    tag: "Reporting",
+    tagClass: "tag-reporting",
+    stripe: "stripe-reporting",
+    title: "Group Consolidated Financial Statements — 7 Entities",
+    summary:
+      "Monthly consolidation across 7 subsidiaries was taking 12 days and still generating auditor-flagged errors every year. We built a one-click consolidation engine inside Zoho Analytics with automatic intercompany elimination — delivering board-ready results by Day 1 of every month.",
+    client: "Indian Conglomerate",
+    industry: "Diversified Group · India",
+    metrics: [
+      { val: "12→1", lbl: "Days to Consolidate" },
+      { val: "7", lbl: "Entities Merged" },
+      { val: "Zero", lbl: "Audit Errors (3yrs)" },
+    ],
+    tools: ["Zoho Books", "Zoho Analytics", "SQL", "Power Pivot Export"],
+    problem:
+      "The Group CFO needed monthly consolidated P&L, Balance Sheet, and Cash Flow across 7 subsidiaries — each running Zoho Books with a different chart of accounts. Manual consolidation required 12 days of intercompany matching, elimination journaling, and format harmonization. Auditors flagged material errors in the consolidated statements for 3 consecutive years. As their Zoho partner, we knew the solution was building the consolidation logic into Zoho Analytics rather than trying to do it manually in Excel month after month.",
+    challenges: [
+      "Mapping 7 different Zoho Books charts of accounts to a standardized group COA in Zoho Analytics",
+      "Identifying intercompany transactions across all 21 entity-pair combinations at transaction level",
+      "Eliminating intercompany receivables, payables, revenues, and costs simultaneously and accurately",
+      "Dividend upstream elimination and minority interest calculation for 3 partially-owned subsidiaries",
+      "Goodwill computation and amortization for the 2 acquisition-basis entities",
+      "Generating audit-ready elimination schedules in a format acceptable to Big 4 auditors",
+    ],
+    steps: [
+      { title: "Group COA Framework in Zoho Analytics", desc: "We designed a master group Chart of Accounts and built an automated mapping layer in Zoho Analytics that translates each subsidiary's Zoho Books trial balance into the standardized group structure — automatically, every month." },
+      { title: "IC Transaction Detection via SQL", desc: "Zoho Analytics SQL logic was created to auto-identify intercompany transactions using entity-pair tagging, party master cross-referencing, and amount plus date matching across all 7 entities." },
+      { title: "Automated Elimination Engine", desc: "Elimination schedules for IC receivables/payables, IC revenue/cost, intercompany dividends, and investment-equity offsets were built to generate automatically — with no manual journal entries required." },
+      { title: "Minority Interest and Goodwill Computation", desc: "Minority interest computation and goodwill amortization schedules were engineered in Zoho Analytics for all entities held on a non-100% or acquisition cost basis." },
+      { title: "One-Click Board Pack from Zoho Analytics", desc: "A single-click consolidated P&L, Balance Sheet, and Cash Flow with full elimination schedules was delivered — formatted for board presentation and audit submission, generated entirely from within Zoho Analytics." },
+    ],
+    results: [
+      { val: "12→1", lbl: "Consolidation Days" },
+      { val: "Auto", lbl: "IC Elimination" },
+      { val: "Group COA", lbl: "Standardized" },
+      { val: "Audit-Ready", lbl: "Every Month" },
+    ],
+    impact:
+      "Board packs are now distributed by Day 2 instead of Day 15. Auditors found zero material errors in consolidated statements for 3 consecutive years — the first clean run in the group's history. The Group CFO now spends consolidation week on strategic analysis rather than chasing manual elimination journals. This is the long-term value of implementing Zoho correctly from the ground up.",
+  },
+
+ {
+    id: 13,
+    tag: "Integration",
+    tagClass: "tag-integration",
+    stripe: "stripe-integration",
+    title: "SAP B1 to Zoho Ecosystem Migration — Zero Data Loss",
+    summary:
+      "5 years of SAP Business One history, ₹18 Lakh in annual maintenance costs, and a genuine fear of data loss after two failed migration attempts by other vendors. We executed a validated, 4-phase migration to Zoho in exactly 8 weeks — on time, on budget, with 100% balance verification.",
+    client: "Manufacturing SME",
+    industry: "Manufacturing · Rajasthan, India",
+    metrics: [
+      { val: "₹18L", lbl: "Annual Savings" },
+      { val: "5 Years", lbl: "History Preserved" },
+      { val: "8 Weeks", lbl: "On-Schedule Go-Live" },
+    ],
+    tools: ["SAP Business One", "Zoho Books", "SQL", "Python ETL Scripts", "Zoho Analytics"],
+    problem:
+      "The client was paying ₹18 Lakh annually in SAP B1 licensing and support. They wanted to migrate to Zoho but were understandably nervous — two previous vendors had failed at data validation, and the fear of losing 5 years of financial history was real. As an experienced Zoho migration partner, we approached this differently: no data touched until every field was mapped, validated, and signed off.",
+    challenges: [
+      "Field-level data mapping across 180 relevant SAP B1 tables to their Zoho Books equivalents",
+      "Migration of open transactions — live invoices, bills, purchase orders, and delivery notes in progress",
+      "Historical reporting access for all pre-migration transactions from Day 1 in Zoho Analytics",
+      "Balance sheet reconciliation at the cut-off date across every ledger account",
+      "Change management and training for 35 active system users across 3 departments",
+      "Business continuity during the 4-week parallel-run period between SAP B1 and Zoho Books",
+    ],
+    steps: [
+      { title: "Field-Level Data Mapping Blueprint", desc: "Before a single line of data was moved, we prepared a complete field-level mapping document across all 180 relevant SAP B1 tables — with every field mapped to its Zoho Books equivalent, reviewed and formally signed off." },
+      { title: "4-Phase Migration Execution", desc: "Migration was executed across 4 signed-off phases: Chart of Accounts & Masters → Open Transactions → Historical Closed Data → Reporting & Analytics Layer. No phase began without sign-off on the previous one." },
+      { title: "Python ETL Transformation Scripts", desc: "Custom Python scripts were written to extract, clean, transform, and load SAP B1 data into Zoho Books via API — handling all data type, date format, and currency conversions with full logging for traceability." },
+      { title: "100% Balance Verification", desc: "SQL validation scripts were built to compare SAP B1 closing balances against Zoho Books opening balances across every account. We only authorized go-live after achieving a 100% match — a standard the previous vendors hadn't met." },
+      { title: "Historical Analytics Warehouse in Zoho Analytics", desc: "All 5 years of pre-migration transactions were loaded into a Zoho Analytics historical data warehouse, maintaining full trend analysis continuity from the very first day in the new system." },
+    ],
+    results: [
+      { val: "100%", lbl: "Balance Match" },
+      { val: "₹18L", lbl: "Saved Annually" },
+      { val: "5 Years", lbl: "History Live" },
+      { val: "Zero", lbl: "Post Go-Live Errors" },
+    ],
+    impact:
+      "The client saved ₹18 Lakh in the first year. All 5 years of history are accessible in Zoho Analytics for audits and trend analysis. Go-live was achieved on schedule with zero post-migration data discrepancies reported across 6 months of live operation — directly reversing two years of failed vendor attempts and restoring the team's confidence in the platform.",
+  },
+
+  {
+    id: 14,
+    tag: "Analytics",
+    tagClass: "tag-analytics",
+    stripe: "stripe-analytics",
+    title: "Distributor Network Analytics for an FMCG Brand",
+    summary:
+      "80+ distributors, no secondary sales visibility, and decisions being made on 30-day-old data. We integrated the brand's DMS with Zoho Books and Zoho Analytics to deliver real-time distributor intelligence — and collection efficiency improved 22% in two quarters.",
+    client: "Regional FMCG Brand",
+    industry: "Consumer Goods · Maharashtra, India",
+    metrics: [
+      { val: "80+", lbl: "Distributors Tracked" },
+      { val: "22%", lbl: "Collection Efficiency" },
+      { val: "Real-Time", lbl: "Secondary Sales" },
+    ],
+    tools: ["Zoho Analytics", "Zoho Books", "SQL", "DMS API Integration"],
+    problem:
+      "Brand management could see primary sales (factory to distributor) in Zoho Books, but had zero visibility into secondary sales (distributor to retailer). Distributor stock positions, outlet coverage, and collection status were tracked through monthly phone calls. Decisions worth crores were being made on data that was 30 days old. We connected their DMS to the Zoho ecosystem to close that gap — and changed how the entire field sales function operates.",
+    challenges: [
+      "Integrating DMS secondary sales data with Zoho Books primary sales at SKU level inside Zoho Analytics",
+      "Distributor-wise current inventory position and days-of-stock calculation",
+      "Outlet coverage percentage vs territory target by sales beat",
+      "Sales representative beat plan adherence and lines-per-call tracking",
+      "Trade scheme and distributor discount accrual reconciliation against Zoho Books",
+      "Payment collection efficiency and distributor credit risk scoring",
+    ],
+    steps: [
+      { title: "DMS-to-Zoho Analytics Data Pipeline", desc: "An automated daily pipeline was built from the brand's Distributor Management System, pulling secondary sales, current stock, and outlet visit data directly into Zoho Analytics — replacing the monthly phone call process with live data." },
+      { title: "Primary-to-Secondary Bridge Table", desc: "We created a bridge table in Zoho Analytics comparing Zoho Books primary sales (factory billing) with DMS secondary sales (offtake) — identifying stock build-up and pipeline fill ratios by territory and SKU." },
+      { title: "Territory Performance Scorecards", desc: "Territory scorecards were built inside Zoho Analytics covering outlet coverage, numeric distribution, lines per call, and beat plan adherence — benchmarked against territory targets and refreshed daily." },
+      { title: "Distributor Health Index (DHI)", desc: "We engineered a composite Distributor Health Index in Zoho Analytics combining collection efficiency from Zoho Books, secondary stock days, growth rate, and outlet coverage into a single 0–100 score per distributor." },
+      { title: "Mobile Dashboard for Field Teams", desc: "A mobile-friendly Zoho Analytics dashboard was delivered for Territory Managers, showing their day's beat plan, distributor health scores, and pending collections status — accessible before every field visit." },
+    ],
+    results: [
+      { val: "22%", lbl: "Collection Efficiency" },
+      { val: "Real-Time", lbl: "Secondary Sales" },
+      { val: "DHI Score", lbl: "Per Distributor" },
+      { val: "Data-Driven", lbl: "Field Visits" },
+    ],
+    impact:
+      "Brand management shifted from monthly anecdotal distributor reviews to weekly data-driven conversations powered by Zoho Analytics. Collection efficiency improved 22% across two quarters. Territory Managers now enter every field visit with complete context on their distributors — replacing the guesswork that previously defined how the field force planned its day.",
+  },
+
+  {
+    id: 15,
+    tag: "Reporting",
+    tagClass: "tag-reporting",
+    stripe: "stripe-reporting",
+    title: "Portfolio Analytics for a Private Equity Fund",
+    summary:
+      "6 portfolio companies on 3 different accounting systems. Quarterly board packs took 3 weeks and missed deadlines. We unified everything into Zoho Analytics and cut pack preparation to 2 days — supporting two successful Series B fundraising rounds in the process.",
+    client: "Private Equity Fund",
+    industry: "Investment Management · Mumbai, India",
+    metrics: [
+      { val: "3 Weeks→2 Days", lbl: "Board Pack Time" },
+      { val: "6", lbl: "Companies Unified" },
+      { val: "Series B", lbl: "Fundraising Supported" },
+    ],
+    tools: ["Zoho Analytics", "SQL", "Tally XML", "QuickBooks API", "PowerPoint Export"],
+    problem:
+      "The fund's 6 portfolio companies were running across Tally, Zoho Books, and QuickBooks. Quarterly board pack preparation required 3 weeks of manual aggregation, format normalization, and KPI translation across systems. Investor reporting deadlines were routinely missed, creating credibility risk with LPs. As their analytics partner, we chose Zoho Analytics as the unification layer — the platform's multi-source data connectivity was purpose-built for exactly this challenge.",
+    challenges: [
+      "Simultaneous data ingestion from Tally (XML), Zoho Books (API), and QuickBooks (CSV) into Zoho Analytics",
+      "Standardizing financial statements across 3 accounting standards and 6 reporting formats",
+      "KPI normalization across industries: retail metrics vs manufacturing vs services — all inside one Zoho Analytics workspace",
+      "EBITDA bridge calculation comparing quarter-on-quarter and year-on-year performance",
+      "Portfolio-level cash flow consolidation and debt covenant tracking across all 6 entities",
+      "Automated board pack data generation in slide-ready format for the quarterly investor presentation",
+    ],
+    steps: [
+      { title: "Multi-Source ETL into Zoho Analytics", desc: "ETL pipelines were built for all 3 accounting systems — Tally via XML export, Zoho Books via native API, QuickBooks via CSV — feeding into a unified financial data lake in Zoho Analytics on an automated schedule." },
+      { title: "Universal Financial Statement Framework", desc: "A master financial statement template was designed in Zoho Analytics mapping each portfolio company's trial balance to a common P&L, Balance Sheet, and Cash Flow structure — regardless of the source accounting system." },
+      { title: "Industry-Adjusted KPI Modules", desc: "Zoho Analytics KPI layers were built for each sector: Same-Store Sales Growth and inventory turn for retail; OEE and material cost ratio for manufacturing; utilization and realization rates for services." },
+      { title: "EBITDA Bridge and Waterfall Charts", desc: "Automated EBITDA bridge analysis was engineered in Zoho Analytics, isolating volume, price, mix, and cost components — rendered as presentation-ready data exports for each portfolio company, every quarter." },
+      { title: "One-Click Board Pack Generation", desc: "A quarterly automation workflow was built inside Zoho Analytics that generates all slide-ready financial exhibits, KPI scorecards, and portfolio summaries in one run — reducing pack preparation from 3 weeks to 2 days." },
+    ],
+    results: [
+      { val: "3 Wks→2 Days", lbl: "Board Pack Time" },
+      { val: "6", lbl: "Companies Unified" },
+      { val: "Zero", lbl: "Missed Deadlines" },
+      { val: "Series B", lbl: "Analytics Supported" },
+    ],
+    impact:
+      "Quarterly board packs are now distributed within 5 business days of quarter close — previously 4 weeks. Portfolio performance conversations shifted from 'let me check and get back to you' to 'here is what the Zoho Analytics dashboard shows.' Two portfolio companies leveraged the analytics framework to support successful Series B fundraising rounds — directly attributing the depth of their financial reporting to investor confidence.",
+  },
+];
+
 
       /* ─── RENDER CARDS ─── */
       const grid = document.getElementById("caseGrid");
